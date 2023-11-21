@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Joshua Castillo Gómez</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('/Imagenes/Fondo2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        section#sobre-mi img {
+            max-width: 35%; /* La imagen no debe exceder el ancho del contenedor */
+            height: auto; /* Mantiene la proporción de aspecto original */
+            display: block; /* Elimina cualquier espacio adicional por debajo de la imagen */
+            margin: 0 auto; /* Centra la imagen */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/Imagenes/Logo.jpg" alt="Joshux" width="70" height="70">
+        <h1>Alejandro Joshua Castillo Gómez</h1>
+    </header>
+
+    <nav>
+        <a href="../Index0.html">Inicio</a>
+        <a href="./Sobremi.html">Sobre mí</a>
+        <a href="./Servicios.html">Servicios</a>
+        <a href="./Contacto.html">Contacto</a>
+        <a href="./Index3.html">Version anterior</a>
+    </nav>
+
+    <main>
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    
+            <button type="submit">Enviar</button>
+        </form>
+        <p>O contáctame en mis redes sociales:</p>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/Joshux07/">
+                <img src="./Imagenes/LogoFace.gif" alt="Facebook" width="200" height="70">
+            </a>
+            <a href="https://instagram.com/Joshux07">
+                <img src="./Imagenes/LogoInsta.gif" alt="Instagram" width="200" height="70">
+            </a>
+        </div>
+   
+        <style>
+            .redes-sociales {
+                display: flex;
+                align-items: center;
+            }
+        
+            .redes-sociales a {
+                margin: 0 auto;
+            }
+        </style>
+    </main>
+
+    <footer>
+        &copy; 2023 IPN Octavo Computación
+    </footer>
+</body>
+
+</html>
