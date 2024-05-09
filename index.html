@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Disco Duro de Respaldo Automático</h1>
+        <form onsubmit="return validarFormulario()" method="POST">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+            <input type="password" id="contrasena" placeholder="Contraseña" required>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Comparar usuario y contraseña con valores esperados
+            if (usuario === "Admin" && contrasena === "0000ABC") {
+                alert("Inicio de sesión exitoso como Admin");
+                window.location.href = "index3.html"; // Redirigir a index3.html
+                return false; // Detener el envío del formulario
+            } else if (usuario === "JoshuaCast" && contrasena === "1234567") {
+                alert("Inicio de sesión exitoso como JoshuaCast");
+                window.location.href = "index3.html"; // Redirigir a index3.html
+                return false; // Detener el envío del formulario
+            } else if (usuario === "Usuario" && contrasena === "Contraseña") {
+                alert("Inicio de sesión exitoso como Usuario");
+                window.location.href = "index3.html"; // Redirigir a index3.html
+                return false; // Detener el envío del formulario
+            } else {
+                alert("Usuario o contraseña incorrectos");
+                return false; // Detener el envío del formulario
+            }
+        }
+    </script>
+</body>
+    <footer>
+        &copy;Copyright <strong> <span>IPN; ESIME CULHUACÁN; JOSHUA CASTILLO, 2024</span> </strong>
+    </footer>
+</html>
+
