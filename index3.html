@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repositorio de Archivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .file {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .file img {
+            width: 100px;
+            height: 100px;
+        }
+        .file a {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Repositorio de Archivos</h1>
+        
+        <php
+        // Directorio donde se encuentran los archivos
+        $directorio = "Respaldos/";
+
+        // Obtener todos los archivos del directorio
+        $archivos = scandir($directorio);
+
+        // Iterar sobre los archivos y mostrarlos
+        foreach ($archivos as $archivo) {
+            // Ignorar "." y ".."
+            if ($archivo != "." && $archivo != "..") {
+                // Obtener la extensión del archivo
+                $extension = pathinfo($archivo, PATHINFO_EXTENSION);
+
+                // Determinar el tipo de archivo y asignar el icono correspondiente
+                switch ($extension) {
+                    case 'pdf':
+                        $icono = "iconopdf.png";
+                        break;
+                    case 'docx':
+                        $icono = "iconodocx.png";
+                        break;
+                    case 'jpg':
+                    case 'jpeg':
+                    case 'png':
+                        $icono = "iconoimagen.png";
+                        break;
+                    default:
+                        $icono = "iconoarchivo.png";
+                        break;
+                }
+
+                // Mostrar el enlace al archivo con su icono y nombre
+                echo '<div class="file">
+                    <a href="Respaldos/" target="_blank">
+                        <img src="icono.png" alt="Archivo" style="width: 50px; height: 50px;"> <!-- Modifica el tamaño del icono aquí -->
+                        <br>Respaldos <!-- Añade un salto de línea y la palabra "Respaldos" aquí -->
+                    </a>
+                </div>';
+        
+    </div>
+</body>
+<footer>
+    &copy;Copyright <strong> <span>IPN; ESIME CULHUACÁN; JOSHUA CASTILLO, 2024</span> </strong>
+</footer>
+</html>
