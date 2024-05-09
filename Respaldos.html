@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de archivos</title>
+</head>
+<body>
+    <h1>Archivos en la carpeta "Respaldos"</h1>
+    <ul id="archivoList"></ul>
+
+    <script>
+        // Directorio donde se encuentran los archivos
+        var directorio = "Respaldos/";
+
+        // Función para obtener los archivos mediante una petición AJAX
+        function obtenerArchivos() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var archivos = JSON.parse(this.responseText);
+                    mostrarArchivos(archivos);
+                }
+            };
+            xhttp.open("GET", "listar_archivos.php?directorio=" + directorio, true); // Enviar una petición GET a un script PHP que lista los archivos
+            xhttp.send();
+        }
+
+        // Función para mostrar los archivos en la página
+        function mostrarArchivos(archivos) {
+            var listaHTML = "";
+            archivos.forEach(function(archivo) {
+                listaHTML += "<li><a href='" + directorio + archivo + "' target='_blank'>" + archivo + "</a></li>";
+            });
+            document.getElementById("archivoList").innerHTML = listaHTML;
+        }
+
+        // Llamar a la función para obtener y mostrar los archivos cuando la página se carga
+        window.onload = function() {
+            obtenerArchivos();
+        };
+    </script>
+</body>
+</html>
